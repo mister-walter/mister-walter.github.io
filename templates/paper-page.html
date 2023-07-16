@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  {{ page.title }}
+</h1>
+{{ page.extra.authors | join(sep=", ") }}. {{ page.extra.venue }}
+(<a href="{{ page.extra.dblp_url }}">DBLP Entry</a>)
+<p class="subtitle"><strong>{{ page.date | date(format="%B %Y") }}</strong></p>
+{{ page.content | safe }}
+<h2>Abstract</h2>
+<p>{{ page.extra.abstract }}</p>
+<a href="{{ get_url(path=page.extra.file) }}">PDF</a>
+{% endblock content %}

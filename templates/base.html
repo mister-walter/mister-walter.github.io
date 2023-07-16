@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Andrew T. Walter</title>
+    <link rel="stylesheet" href="{{ get_url(path="index.css", cachebust=true) }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    {%- if page %}
+	    {%- set resource = page %}
+    {%- elif section %}
+	    {%- set resource = section %}
+    {%- endif %}
+    {%- if resource.path != "/" %}
+        <nav class="main-navbar">
+            <a href="{{ get_url(path="")}}">Home</a>
+        </nav>
+    {%- endif %}
+    
+    {% block content %} {% endblock %}
+
+    <footer>This site was generated using the <a href="https://www.getzola.org/">Zola</a> static site generator. The font used is <a href="https://github.com/Fonthausen/CrimsonPro">Crimson Pro</a>, which is licensed under the <a href="{{ get_url(path="fonts/CrimsonPro/OFL.txt") }}">OFL 1.1</a>. The source files for this website are available <a href="https://github.com/mister-walter/mister-walter.github.io">on Github</a>. The content of this website is copyright (c) 2023 Andrew T. Walter.</footer>
+  </body>
+</html>
