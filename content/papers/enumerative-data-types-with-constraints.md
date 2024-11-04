@@ -10,7 +10,7 @@ abstract = """
 Many verification and validation activities involve
 reasoning about constraints over complex, hierarchical data
 types. For example, distributed protocols are often defined using
-state machines that govern the behavior of processes communicating with messages which are hierarchical data types with statedependent constraints and dependencies between component
+state machines that govern the behavior of processes communicating with messages which are hierarchical data types with state dependent constraints and dependencies between component
 fields. Fuzzing, analyzing and evaluating implementations of such
 protocols requires solving complex queries that pose challenges
 to current SMT solvers. Generating fields that satisfy type
